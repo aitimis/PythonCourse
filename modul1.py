@@ -1,17 +1,17 @@
 # print('Hello World')
 # print('print\u200b("")')
 # print​("")
-HelloWorld = 'Hello World'
-print(HelloWorld)
+H = 'Hello World'
+# print(H)
 
 name = 'Alex'
-# print(100 * (name+"\n"))
+# print(100 * (name + "\n"))
 
-print(80*'#')
-print(3 * name)
-print(name * 3)
+# print(80 * name)
+# print(3 * name)
+# print(name * 3)
 
-print(print)
+# print(print)
 
 # print int
 # print(3)
