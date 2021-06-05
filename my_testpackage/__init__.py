@@ -1,0 +1,1 @@
+from my_testpackage.function_test import function2 as f2
