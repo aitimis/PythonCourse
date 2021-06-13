@@ -42,16 +42,16 @@ print(results_dict)
 # 20P
 # Check dict_of_results and determine which function has the smallest value in the list of values
 
-function_with_smallest_result = None
+smallest_result_func = None
 smallest_value = None
 
 for f, values in results_dict.items():
     if smallest_value is None or smallest_value > values:
         smallest_value = values
-        function_with_smallest_result = f
-print(smallest_value, function_with_smallest_result)
+        smallest_result_func = f
+print(smallest_value, smallest_result_func)
 
 # 20P
 # Call function_with_smallest_result with argument x = 0 and print the returned value (you should get 2)
-res = function_with_smallest_result
+res = smallest_result_func
 print(res)
