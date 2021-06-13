@@ -6,10 +6,14 @@
 # - returned tuple contains the two processed strings
 # example: "1234567a Text to te5t" will become ("1234567A", "_ext_to_te_t")
 
-def process_text(text: str):
-    pass
-    for word in text:
+def tsplit(text):
+    final_tuple = ()
+    splitted_text = text.split(sep=' ', maxsplit=1)
+    splitted_text[0] = splitted_text[0].upper()
+    for i in splitted_text[1]:
+        if i.islower() is False:
+            splitted_text[1] = splitted_text[1].replace(i, '_')
+    final_tuple = tuple(splitted_text)
+    return final_tuple
 
-
-
-print(process_text('1234567a Text to te5t'))
+print(tsplit('1234567a Text to te5t'))
