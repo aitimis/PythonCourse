@@ -20,3 +20,51 @@ Masinile cu serii pare sunt cu volan pe dreapta iar cele cu serii impare cu vola
    b) documentati clasele 5p
    c) documentati metodele 5p
 """
+
+class CarsFactory:
+    """ main factory """
+    def __init__(self, series: int,  lot_nr: int):
+        """ contructor """
+        self.series = series
+        self.lot_nr = lot_nr
+
+    def left_hand(self):
+      """ left hand cars method """
+        left_hand_list = []
+        for i in range(series, lot_nr):
+            if i % 2 != 0:
+                left_hand_list.append(i)
+        return left_hand_list
+
+    def right_hand(self):
+      """ right hand cars method """
+        right_hard_list = []
+        for i in range(series, lot_nr):
+            if i % 2 == 0:
+                right_hard_list.append(i)
+        return right_hard_list
+
+    def __iter__(self):
+        return CarsIterator
+
+
+class CarsIterator:
+    """ class for iteration """
+    def __init__(self, data: list):
+        """ constructor """
+        self.data = data
+
+    def __next__(self):
+        if not self.data:
+            raise StopIteration
+        return self.data.pop()
+
+    def __iter__(self):
+        return self
+
+
+car_result = CarsFactory(314, 90)
+
+with open('Datafile.txt', 'w') as file:
+    for i in car_result:
+        file.write(str(i) + '\n')
